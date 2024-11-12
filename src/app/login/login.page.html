@@ -1,0 +1,46 @@
+<ion-content class="ion-padding">
+  <div class="ion-text-center">
+    <p class="text-head"><strong>Missed Us?</strong></p>
+    <p>Sign in to continue</p>
+
+    <h2>
+      <span class="title">DejaBrew</span>
+    </h2>
+
+    <ion-card class="card-padding">
+      <div class="input-container">
+        <label for="username">Username:</label>
+        <ion-input id="username" placeholder="Enter your username" fill="outline" [clearOnEdit]="true"
+          class="custom-input"></ion-input>
+      </div>
+
+      <div class="input-container">
+        <label for="password">Password:</label>
+        <ion-input id="password" placeholder="Enter your password" [type]="showPassword ? 'text' : 'password'"
+          fill="outline" [clearOnEdit]="true" class="custom-input">
+        </ion-input>
+        <span class="eye-icon" (click)="togglePasswordVisibility()">
+          <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" size="medium"></ion-icon>
+        </span>
+      </div>
+
+      <div>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+      </div>
+
+      <ion-button class="signInButton">Sign In</ion-button>
+
+      <div class="or-section">
+        <p>or</p>
+      </div>
+
+      <div class="social-icons">
+        <ion-icon name="logo-facebook" size="large"></ion-icon>
+        <ion-icon name="logo-instagram" size="large"></ion-icon>
+        <ion-icon name="logo-google" size="large"></ion-icon>
+      </div>
+    </ion-card>
+
+    <p class="register">Don't have an account? <a href="">Register</a></p>
+  </div>
+</ion-content>
