@@ -1,46 +1,52 @@
 <ion-content class="ion-padding">
+
+  <ion-icon class="backBtn "name="chevron-back-outline"></ion-icon>
+  
   <div class="ion-text-center">
-    <p class="text-head"><strong>Missed Us?</strong></p>
-    <p>Sign in to continue</p>
+    <p class="text-head">Missed Us?</p>
+    <p class="text-subhead"><strong>Sign in to continue</strong></p>
 
     <h2>
       <span class="title">DejaBrew</span>
     </h2>
 
     <ion-card class="card-padding">
+
       <div class="input-container">
-        <label for="username">Username:</label>
+        <label >Username:</label>
         <ion-input id="username" placeholder="Enter your username" fill="outline" [clearOnEdit]="true"
-          class="custom-input"></ion-input>
+          class="custom-input ios-input username-input"></ion-input>
       </div>
 
       <div class="input-container">
-        <label for="password">Password:</label>
+        <label >Password:</label>
         <ion-input id="password" placeholder="Enter your password" [type]="showPassword ? 'text' : 'password'"
-          fill="outline" [clearOnEdit]="true" class="custom-input">
+          fill="outline" [clearOnEdit]="true" class="custom-input ios-input password-input">
         </ion-input>
         <span class="eye-icon" (click)="togglePasswordVisibility()">
           <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" size="medium"></ion-icon>
         </span>
       </div>
 
-      <div>
+      <div class="forgot-password">
         <a href="#" class="forgot-password">Forgot Password?</a>
       </div>
 
-      <ion-button class="signInButton">Sign In</ion-button>
+      <!-- custom button component -->
+      <app-custom-button text="Sign In" customClass="signInButton"></app-custom-button>
 
       <div class="or-section">
         <p>or</p>
       </div>
 
       <div class="social-icons">
-        <ion-icon name="logo-facebook" size="large"></ion-icon>
-        <ion-icon name="logo-instagram" size="large"></ion-icon>
-        <ion-icon name="logo-google" size="large"></ion-icon>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+        <ion-icon name="logo-google"></ion-icon>
       </div>
     </ion-card>
 
-    <p class="register">Don't have an account? <a href="">Register</a></p>
+    <p class="register">Don't have an account? <a routerLink="/signup">Register</a></p>
+
   </div>
 </ion-content>

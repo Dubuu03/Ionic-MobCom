@@ -8,12 +8,15 @@ import { SignupPageRoutingModule } from './signup-routing.module';
 
 import { SignupPage } from './signup.page';
 
+import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SignupPageRoutingModule
+    SignupPageRoutingModule,
+    CustomButtonComponent // Adding the custom button component here  
   ],
   declarations: [SignupPage]
 })
