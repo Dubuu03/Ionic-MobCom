@@ -7,11 +7,12 @@ ion-content {
     padding: 20px;
 }
 
-ion-padding {
-    padding: 30px;
+ion-icon.btnBack {
+    padding:10px;
+    cursor: pointer;
 }
 
-ion-text-center {
+.ion-text-center {
     width: 100%;
     text-align: center;
 }
@@ -30,7 +31,6 @@ a {
     text-decoration: none;
     font-weight: bold;
 }
-
 .input-container {
     position: relative;
     display: flex;
@@ -41,33 +41,62 @@ a {
     margin-bottom: 15px;
 }
 
+.custom-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: transparent;
+    color: #000;
+    outline: none;
+
+    &::placeholder {
+        color: #aaa;
+    }
+
+    &:focus {
+        border-color: #59392c;
+        box-shadow: 0 0 10px rgba(89, 57, 44, 0.5);
+    }
+}
+
+.username-input {
+    padding-right: 12px;
+}
+
+.password-input {
+    padding-right: 45px;
+}
+
 .eye-icon {
     position: absolute;
-    top: 60px;
+    top: 73%;
     right: 15px;
     cursor: pointer;
     transform: translateY(-50%);
     z-index: 5;
-}
 
-.eye-icon ion-icon {
-    font-size: 20px;
-    color: #333;
-    position: relative;
-    user-select: none;
-}
-
-.backBtn {
-    margin-top:10px;
-    padding: 20px;
-    cursor: pointer;
+    ion-icon {
+        font-size: 20px;
+        color: #666;
+        user-select: none;
+    }
 }
 
 .text-head {
-    margin-top: 20px;
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.3;    
 }
-.text-subhead{
-    font-size: 16px;
+
+
+.text-head strong {
+    display: block;
+    font-size: 14px;
+    margin-top: -2px;
 }
 
 h2 {
@@ -75,8 +104,8 @@ h2 {
     align-items: center;
     justify-content: center;
     font-size: 35px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-family: "Limelight", sans-serif;
     font-weight: 400;
 }
@@ -86,73 +115,19 @@ h2 span {
     margin-right: 8px;
 }
 
-
 ion-card.card-padding {
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    margin-top: 40px;
-    border-radius: 15px;
-}
-.ios ion-input {
-    --border-radius: 10px;
-    --padding-start: 12px;
-    --padding-end: 12px;
-    --background: transparent;
-    --border-color: #ccc;
-    --placeholder-color: #aaa;
-    font-size: 14px;
-    height: 40px;
-    width: 100%;
-}
-
-
-.ios ion-input[fill="outline"] {
-    --padding-start: 12px;
-    --background: transparent;
-    --border-color: #ccc;
-    --placeholder-color: #aaa;
-    --border-radius: 10px;
-    width: 100%;
-    height: 40px;
-    font-size: 14px;
-    padding-right: 10px;
-}
-
-.username-input{
-    --padding-end: 12px;
-    --border-radius: 10px;
-}
-.password-input{
-    --padding-end: 45px;
-    --border-radius: 10px;
-}
-
-ion-input[fill="outline"] {
-    --background: transparent;
-    --border-color: #ccc;
-    --border-radius: 10px; 
-    --color: #000;
-}
-
-ion-input[fill="outline"]:focus {
-    --border-color: #59392C;
-    --box-shadow: 0 0 10px rgba(89, 57, 44, 0.5);
-    outline: none;
-}
-
-ion-item {
-    margin-top: 15px;
-    margin-bottom: 16px;
-    --border-radius: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
 label {
     font-size: 14px;
     font-weight: bold;
     display: block;
-    margin-bottom: 8px;
     color: #333;
 }
 
@@ -164,66 +139,62 @@ label {
     margin-bottom: 10px;
 }
 
-
 .or-section {
-    margin: px 0;
     font-size: 14px;
     color: #666;
     text-align: center;
     margin: 10px 0;
-}
 
+    p {
+        position: relative;
+        display: inline-block;
+        background-color: transparent;
+    }
 
-.or-section p {
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-    padding: 0 10px;
-    background-color: transparent;
-}
+    p::before,
+    p::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 150%;
+        height: 1px;
+        background-color: #ccc;
+    }
 
-.or-section p::before,
-.or-section p::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 200%;
-    height: 1px;
-    background-color: #ccc;
-}
+    p::before {
+        left: 150%;
+    }
 
-.or-section p::before {
-    left: 30px;
-}
-
-.or-section p::after {
-    right: 30px;
+    p::after {
+        right: 150%;
+    }
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
     gap: 20px;
+
+    ion-icon {
+        cursor: pointer;
+        font-size: 24px;
+        transition: color 0.3s ease;
+
+        &:nth-child(1) {
+            color: #3b5998;
+        }
+
+        &:nth-child(2) {
+            color: #e1306c;
+        }
+
+        &:nth-child(3) {
+            color: #db4437;
+        }
+    }
 }
 
-.social-icons ion-icon {
-    cursor: pointer;
-    font-size: 24px;
-    transition: color 0.3s ease;
-}
-
-.social-icons ion-icon:nth-child(1) {
-    color: #3b5998;
-}
-
-.social-icons ion-icon:nth-child(2) {
-    color: #E1306C;
-}
-
-.social-icons ion-icon:nth-child(3) {
-    color: #db4437;
-}
-
-.register {
-    margin-top: 30px;
+.signUp {
+    margin-top: 20px;
+    font-size:12px
 }

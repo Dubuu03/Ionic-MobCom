@@ -1,55 +1,54 @@
 <ion-content class="ion-padding">
-  <ion-icon class="backBtn" name="chevron-back-outline"></ion-icon>
+  <app-back-button></app-back-button>
 
   <div class="ion-text-center">
-    <p class="text-head">Wanna Taste Sweet Memories? </p>
-    <p class="text-subhead"><strong>Sign up to continue</strong></p>
+    <p class="text-head">
+      Missed Us?<br>
+      <strong>Sign in to continue</strong>
+    </p>
 
     <h2>
       <span class="title">DejaBrew</span>
     </h2>
 
     <ion-card class="card-padding">
-      <div class="input-container">
-        <label>Username:</label>
-        <ion-input id="username" placeholder="Enter your username" fill="outline" [clearOnEdit]="true"
-          class="custom-input ios-input username-input"></ion-input>
-      </div>
 
       <div class="input-container">
-        <label>Email:</label>
-        <ion-input id="username" placeholder="Enter your email" fill="outline" [clearOnEdit]="true"
-          class="custom-input ios-input username-input"></ion-input>
+        <label for="username">Username:</label>
+        <input id="username" type="text" placeholder="Enter your username" class="custom-input username-input" />
+      </div>
+      
+      <div class="input-container">
+        <label for="username">Email:</label>
+        <input id="username" type="email" placeholder="Enter your username" class="custom-input username-input" />
       </div>
 
     <div class="input-container">
-      <label>Password:</label>
-      <ion-input id="password" placeholder="Enter your password" [type]="showPassword ? 'text' : 'password'" fill="outline"
-        [clearOnEdit]="true" class="custom-input ios-input password-input">
-      </ion-input>
+      <label for="password">Password:</label>
+      <input id="password" [type]="showPassword ? 'text' : 'password'" placeholder="Enter your password"
+        class="custom-input password-input" />
       <span class="eye-icon" (click)="togglePasswordVisibility('password')">
         <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" size="medium"></ion-icon>
       </span>
     </div>
     
     <div class="input-container">
-      <label>Confirm Password:</label>
-      <ion-input id="confirmPassword" placeholder="Confirm your password" [type]="showConfirmPassword ? 'text' : 'password'"
-        fill="outline" [clearOnEdit]="true" class="custom-input ios-input password-input">
-      </ion-input>
-      <span class="eye-icon" (click)="togglePasswordVisibility('confirmPassword')">
+      <label for="confirmPassword">Confirm Password:</label>
+      <input id="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Enter your password"
+        class="custom-input password-input" />
+      <span class="eye-icon eye-confirm" (click)="togglePasswordVisibility('confirmPassword')">
         <ion-icon [name]="showConfirmPassword ? 'eye' : 'eye-off'" size="medium"></ion-icon>
       </span>
     </div>
 
 
-
+      
       <!-- custom button component -->
-      <app-custom-button text="Sign In" customClass="signInButton"></app-custom-button>
+      <app-custom-button text="Sign Up" customClass="signInButton"></app-custom-button>
+
+
     </ion-card>
 
-    <p class="register">
-      Already have an account? <a routerLink="/login">Register</a>
-    </p>
+    <p class="signIn">Already have an account? <a routerLink="/login">Sign In</a></p>
   </div>
 </ion-content>

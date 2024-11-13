@@ -8,17 +8,17 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',  // Default path will redirect to login
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'login',  // Route for login page
+    path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'signup',  // Route for sign-up page
+    path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
-  }
+  },
 ];
 
 @NgModule({
@@ -27,4 +27,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -7,7 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
-import { CustomButtonComponent } from '../custom-button/custom-button.component';  // Import CustomButtonComponent
+import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
+import { BackButtonComponent } from '../back-button/back-button.component'  
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { CustomButtonComponent } from '../custom-button/custom-button.component'
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    CustomButtonComponent  // Add CustomButtonComponent 
+    CustomButtonComponent,  // Add CustomButtonComponent 
+    BackButtonComponent  // Add BackButtonComponent
   ],
   declarations: [LoginPage] 
 })

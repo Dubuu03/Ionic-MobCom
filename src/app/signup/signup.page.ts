@@ -12,27 +12,19 @@ export class SignupPage implements OnInit {
   ngOnInit() {
   }
 
-  showPassword: boolean = false; 
-  showConfirmPassword = false;
+showPassword: boolean = false;
+showConfirmPassword: boolean = false;
 
-  togglePasswordVisibility(field: string) {
-    const passwordField = document.querySelector(`#${field}`) as HTMLIonTextareaElement;
-    const input = passwordField.shadowRoot?.querySelector('input');
+togglePasswordVisibility(field: string) {
+  const passwordField = document.querySelector(`#${field}`) as HTMLInputElement;
 
-    if (field === 'password') {
-      if (this.showPassword) {
-        input?.setAttribute('type', 'text');
-      } else {
-        input?.setAttribute('type', 'password');
-      }
-      this.showPassword = !this.showPassword;
-    } else if (field === 'confirmPassword') {
-      if (this.showConfirmPassword) {
-        input?.setAttribute('type', 'text');
-      } else {
-        input?.setAttribute('type', 'password');
-      }
-      this.showConfirmPassword = !this.showConfirmPassword;
-    }
+  if (field === 'password') {
+    this.showPassword = !this.showPassword;
+    passwordField.type = this.showPassword ? 'text' : 'password';
+  } else if (field === 'confirmPassword') {
+    this.showConfirmPassword = !this.showConfirmPassword;
+    passwordField.type = this.showConfirmPassword ? 'text' : 'password';
   }
+}
+
 }
