@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular'
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';  
 import { IonicModule } from '@ionic/angular'; 
 
 @Component({
@@ -7,15 +7,14 @@ import { IonicModule } from '@ionic/angular';
   templateUrl: './back-button.component.html',
   styleUrls: ['./back-button.component.scss'],
   standalone: true,
-  imports: [IonicModule]  
+  imports: [IonicModule]  // Import IonicModule for Ion components
 })
-export class BackButtonComponent implements OnInit {
+export class BackButtonComponent {
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private router: Router) { }  // Inject the Router service
 
-  ngOnInit() {}
-
+  // Method to navigate to the Home page
   goBack() {
-    this.navCtrl.back(); 
+    this.router.navigate(['/home']);  // This will navigate to the Home page
   }
 }

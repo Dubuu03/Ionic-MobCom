@@ -20,7 +20,7 @@
       
       <div class="input-container">
         <label for="username">Email:</label>
-        <input id="username" type="email" placeholder="Enter your username" class="custom-input username-input" />
+        <input id="email" type="email" placeholder="Enter your email" class="custom-input username-input" />
       </div>
 
     <div class="input-container">
@@ -34,7 +34,7 @@
     
     <div class="input-container">
       <label for="confirmPassword">Confirm Password:</label>
-      <input id="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Enter your password"
+      <input id="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Confirm your password"
         class="custom-input password-input" />
       <span class="eye-icon eye-confirm" (click)="togglePasswordVisibility('confirmPassword')">
         <ion-icon [name]="showConfirmPassword ? 'eye' : 'eye-off'" size="medium"></ion-icon>

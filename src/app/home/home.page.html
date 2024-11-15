@@ -1,29 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding background-container">
+  <img src="/assets/images/onboarding.png" alt="Background" class="background-image" />
+  <div class="content-overlay">
+    <div class="title-container">
+      <h1>Ready for a <br><span class="highlight">DejaBrew</span><br>moment?</h1>
+      <p class="description">Join us and make today a memory</p>
+      <p class="second-description description">worth repeating.</p>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <a routerLink="/login">
+      <app-custom-button text="Sign In" customClass="signInButton"></app-custom-button>
+    </a>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <a routerLink="/signup">
+      <app-custom-button text="Register" customClass="signUpButton"></app-custom-button>
+    </a>
   </div>
-
-  <a routerLink="/login">
-    <app-custom-button text="Sign In" customClass="signInButton"></app-custom-button>
-  </a>
-  
-  <a routerLink="/login">
-    <app-custom-button text="Sign Up" customClass="signInButton"></app-custom-button>
-  </a>
-  
 </ion-content>

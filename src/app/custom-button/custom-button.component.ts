@@ -13,8 +13,7 @@ import { RouterModule } from '@angular/router';
 export class CustomButtonComponent implements OnInit {
 
   @Input() text: string = 'Button';       
-  @Input() customClass: string = '';    
-  @Input() routerLink: string = '';       
+  @Input() customClass: string = '';        
 
   constructor() {}
 

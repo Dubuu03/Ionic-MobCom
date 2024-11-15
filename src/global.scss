@@ -40,24 +40,10 @@
 /* Import Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+
 :root {
   --ion-font-family: 'Poppins', sans-serif;
   --ion-mode: ios;
   --ion-input-border-radius: 10px;
 }
 
-@font-face {
-@font-face {
-    font-family: 'Giarek';
-    src: url('/Login/src/assets/fonts/Giarek-DemoVersion-Regular.otf') format('opentype'),
-      url('/Login/src/assets/fonts/Giarek-DemoVersion-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  font-weight: normal;
-  font-style: normal;
-}
-
-.input-fill-outline.sc-ion-input-md-h .input-outline-container.sc-ion-input-md{
-  --height:80% !important;
-}
