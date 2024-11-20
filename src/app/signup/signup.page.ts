@@ -6,25 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
+  showPassword: boolean = false; // Controls visibility of the password field
+  showConfirmPassword: boolean = false; // Controls visibility of the confirm password field
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  togglePasswordVisibility(field: 'password' | 'confirmPassword') {
+    if (field === 'password') {
+      this.showPassword = !this.showPassword;
+    } else if (field === 'confirmPassword') {
+      this.showConfirmPassword = !this.showConfirmPassword;
+    }
   }
-
-showPassword: boolean = false;
-showConfirmPassword: boolean = false;
-
-togglePasswordVisibility(field: string) {
-  const passwordField = document.querySelector(`#${field}`) as HTMLInputElement;
-
-  if (field === 'password') {
-    this.showPassword = !this.showPassword;
-    passwordField.type = this.showPassword ? 'text' : 'password';
-  } else if (field === 'confirmPassword') {
-    this.showConfirmPassword = !this.showConfirmPassword;
-    passwordField.type = this.showConfirmPassword ? 'text' : 'password';
-  }
-}
-
 }

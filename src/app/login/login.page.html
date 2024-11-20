@@ -12,9 +12,8 @@
       <img src="assets/images/CoffeeBean.png" alt="Logo" class="h2-image" />
     </h2>
 
-
     <ion-card class="card-padding">
-
+      <!-- Input Fields -->
       <div class="input-container">
         <label for="username">Username:</label>
         <input id="username" type="text" placeholder="Enter your username" class="custom-input username-input" />
@@ -33,7 +32,7 @@
         <a href="#" class="forgot-password">Forgot Password?</a>
       </div>
 
-      <!-- custom button component -->
+      <!-- Custom Button Component -->
       <app-custom-button text="Sign In" customClass="signInButton"></app-custom-button>
 
       <div class="or-section">
@@ -41,13 +40,33 @@
       </div>
 
       <div class="social-icons">
-        <ion-icon name="logo-facebook"></ion-icon>
-        <ion-icon name="logo-instagram"></ion-icon>
-        <ion-icon name="logo-google"></ion-icon>
+        <ion-icon id="open-modal"name="logo-facebook" (click)="openModal('facebook.com')"></ion-icon>
+        <ion-icon name="logo-instagram" (click)="openModal('instagram.com')"></ion-icon>
+        <ion-icon name="logo-google" (click)="openModal('google.com')"></ion-icon>
       </div>
     </ion-card>
 
     <p class="signUp">Don't have an account? <a routerLink="/signup">Register.</a></p>
   </div>
-</ion-content>
 
+  <!-- Modal -->
+  <div *ngIf="isModalVisible" class="modal-container">
+    <div class="modal-content">
+      <div class="modal-logo">
+        <ion-icon [name]="platformLogo" [style.color]="platformColor" class="logomodal"></ion-icon>
+      </div>
+
+      <h2 class="modal-title">DejaBrew wants to use "{{ platform }}" to sign in</h2>
+      <p class="modal-text">
+        This allows the app and website to share information about you.
+      </p>
+
+      <div class="modal-buttons">
+        <ion-button expand="block" fill="outline" (click)="dismissModal()">Cancel</ion-button>
+        <app-custom-button text="Continue" customClass="signInButton" (click)="proceed()"></app-custom-button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>
