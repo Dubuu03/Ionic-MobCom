@@ -83,6 +83,7 @@ ion-content {
 .swiper-container {
     width: 100%;
     padding-left: 10px ;
+    z-index: 10;
 }
 
 /* Slide Styles */
@@ -90,22 +91,17 @@ swiper-slide {
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
-    /* Reduced padding between slides */
 }
 
 app-product-card {
     width: 48%;
-    /* Adjust the width of the product card to maximize space */
     margin-bottom: 10px;
-    /* Reduced margin to bring slides closer */
 }
 
-/* Adjust the search bar position */
 .search-bar {
     margin-top: 10px;
 }
 
-/* Swiper Navigation Arrow Styles */
 .swiper-button-next,
 .swiper-button-prev {
     color: white;
@@ -115,4 +111,13 @@ app-product-card {
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     color: #D9D9D9;
+}
+
+ion-tabs{
+    z-index: 0;
+}
+ion-tab-button, ion-tab-bar{
+    background-color: #332218;
+    color:white;
+
 }

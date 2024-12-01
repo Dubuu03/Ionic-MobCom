@@ -6,15 +6,16 @@ import { Component, OnInit, HostListener } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
+  
   slidesPerView: number = 1.1;  // Default value for larger screens
 
   constructor() {}
 
   ngOnInit() {
-    this.updateSlidesPerView();  // Set the slidesPerView value when the page is initialized
+    this.updateSlidesPerView(); 
   }
 
-  // Listen for window resize events to adjust slidesPerView dynamically
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {  // Use Event instead of ResizeEvent
     this.updateSlidesPerView();

@@ -101,23 +101,35 @@
           }"></app-product-card>
     </swiper-slide>
   </swiper-container>
-
-
-  <!-- Bottom Navbar -->
-  <ion-navbar>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button>
-          <ion-icon name="home"></ion-icon>
-          Home
-        </ion-button>
-      </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-button>
-          <ion-icon name="person"></ion-icon>
-          Account
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-navbar>
+  
 </ion-content>
+
+
+<!-- Bottom Tab Bar -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <!-- Home Tab -->
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <!-- Favorites Tab -->
+    <ion-tab-button tab="favorites">
+      <ion-icon name="heart"></ion-icon>
+      <ion-label>Favorites</ion-label>
+    </ion-tab-button>
+
+    <!-- Notifications Tab -->
+    <ion-tab-button tab="notifications">
+      <ion-icon name="notifications"></ion-icon>
+      <ion-label>Notifications</ion-label>
+    </ion-tab-button>
+
+    <!-- Account Tab -->
+    <ion-tab-button tab="account">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Account</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

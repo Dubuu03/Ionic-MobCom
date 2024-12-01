@@ -8,7 +8,6 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
 import { ProductCardComponent } from '../product-card/product-card.component';
 
-
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
