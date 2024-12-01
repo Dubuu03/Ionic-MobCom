@@ -1,20 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>HOME PAGE</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content class="ion-padding background-container">
-  <div class="content-overlay">
-    <div class="title-container">
-      <h1>Ready for a <br><span class="highlight">DejaBrew</span><br>moment?</h1>
-      <p class="description">Join us and make today a memory</p>
-      <p class="second-description description">worth repeating.</p>
-    </div>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">onboarding-4</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-    <div class="button-container">
-      <a routerLink="/login">
-        <app-custom-button text="Sign In" customClass="signInButton"></app-custom-button>
-      </a>
-
-      <a routerLink="/signup">
-        <app-custom-button text="Register" customClass="signUpButton"></app-custom-button>
-      </a>
-    </div>
-  </div>
+  <app-product-card [product]="{
+      ratingIconUrl: 'assets/images/star.png',
+      rating: 4.5,
+      title: 'Strawberry Blush Frost',
+      price: 1000,
+      productImageUrl: 'assets/images/strawberry.png',
+      favorite: false,
+      productId: 123,
+      productPath: '/product-details/123' 
+    }">
+  </app-product-card>
 </ion-content>

@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 
 @NgModule({
@@ -14,8 +15,11 @@ import { CustomButtonComponent } from '../custom-button/custom-button.component'
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    CustomButtonComponent 
+    CustomButtonComponent,
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    ProductCardComponent
+  ]
 })
 export class HomePageModule {}
