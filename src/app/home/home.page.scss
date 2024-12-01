@@ -1,8 +1,10 @@
+/* Header Styles */
 ion-header {
     --background: #332218;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .combined-toolbar {
@@ -56,5 +58,61 @@ ion-header {
         margin-top: 5px;
         padding: 10px;
     }
+}
 
+/* Content Styles */
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    --background: #F9F2ED;
+}
+
+.product-label {
+    color: #633E27;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: left;
+    margin: 20px 0 10px 15px;
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%;
+    padding-left: 10px ;
+}
+
+/* Slide Styles */
+swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    /* Reduced padding between slides */
+}
+
+app-product-card {
+    width: 48%;
+    /* Adjust the width of the product card to maximize space */
+    margin-bottom: 10px;
+    /* Reduced margin to bring slides closer */
+}
+
+/* Adjust the search bar position */
+.search-bar {
+    margin-top: 10px;
+}
+
+/* Swiper Navigation Arrow Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white;
+    font-size: 20px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #D9D9D9;
 }

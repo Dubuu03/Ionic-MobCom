@@ -22,86 +22,102 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Swiper Container -->
-  <swiper-container [slidesPerView]="1" [spaceBetween]="10" [loop]="true" 
-    [navigation]="false">
+  <!-- Best Sellers Label -->
+  <div class="product-label">
+    Best Sellers
+  </div>
+
+  <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
     <!-- Product Slides -->
     <swiper-slide>
       <app-product-card [product]="{
-          ratingIconUrl: 'assets/images/star.png',
-          rating: 4.5,
-          title: 'Strawberry Blush Frost',
-          price: 1000,
-          productImageUrl: 'assets/images/strawberry.png',
-          favorite: false,
-          productId: 123,
-          productPath: '/product-details/123'
-        }"></app-product-card>
+              ratingIconUrl: 'assets/images/star.png',
+              rating: 4.5,
+              title: 'Strawberry Blush Frost',
+              price: 1000,
+              productImageUrl: 'assets/images/strawberry.png',
+              favorite: false,
+              productId: 123,
+              productPath: '/product-details/123'
+          }"></app-product-card>
+
+      <app-product-card [product]="{
+              ratingIconUrl: 'assets/images/star.png',
+              rating: 4.5,
+              title: 'Strawberry Blush Frost',
+              price: 1000,
+              productImageUrl: 'assets/images/strawberry.png',
+              favorite: false,
+              productId: 123,
+              productPath: '/product-details/123'
+          }"></app-product-card>
     </swiper-slide>
 
     <swiper-slide>
       <app-product-card [product]="{
-          ratingIconUrl: 'assets/images/star.png',
-          rating: 4.5,
-          title: 'Strawberry Blush Frost',
-          price: 1000,
-          productImageUrl: 'assets/images/strawberry.png',
-          favorite: false,
-          productId: 123,
-          productPath: '/product-details/123'
-        }"></app-product-card>
-    </swiper-slide>
-    
-    <swiper-slide>
+              ratingIconUrl: 'assets/images/star.png',
+              rating: 4.5,
+              title: 'Strawberry Blush Frost',
+              price: 1000,
+              productImageUrl: 'assets/images/strawberry.png',
+              favorite: false,
+              productId: 123,
+              productPath: '/product-details/123'
+          }"></app-product-card>
+
       <app-product-card [product]="{
-          ratingIconUrl: 'assets/images/star.png',
-          rating: 4.5,
-          title: 'Strawberry Blush Frost',
-          price: 1000,
-          productImageUrl: 'assets/images/strawberry.png',
-          favorite: false,
-          productId: 123,
-          productPath: '/product-details/123'
-        }"></app-product-card>
-    </swiper-slide>
-    
-    <swiper-slide>
-      <app-product-card [product]="{
-          ratingIconUrl: 'assets/images/star.png',
-          rating: 4.5,
-          title: 'Strawberry Blush Frost',
-          price: 1000,
-          productImageUrl: 'assets/images/strawberry.png',
-          favorite: false,
-          productId: 123,
-          productPath: '/product-details/123'
-        }"></app-product-card>
+              ratingIconUrl: 'assets/images/star.png',
+              rating: 4.5,
+              title: 'Strawberry Blush Frost',
+              price: 1000,
+              productImageUrl: 'assets/images/strawberry.png',
+              favorite: false,
+              productId: 123,
+              productPath: '/product-details/123'
+          }"></app-product-card>
     </swiper-slide>
 
     <swiper-slide>
       <app-product-card [product]="{
-          ratingIconUrl: 'assets/images/star.png',
-          rating: 4.5,
-          title: 'Strawberry Blush Frost',
-          price: 1000,
-          productImageUrl: 'assets/images/strawberry.png',
-          favorite: false,
-          productId: 123,
-          productPath: '/product-details/123'
-        }"></app-product-card>
-    </swiper-slide>
+              ratingIconUrl: 'assets/images/star.png',
+              rating: 4.5,
+              title: 'Strawberry Blush Frost',
+              price: 1000,
+              productImageUrl: 'assets/images/strawberry.png',
+              favorite: false,
+              productId: 123,
+              productPath: '/product-details/123'
+          }"></app-product-card>
 
-    <swiper-slide>
       <app-product-card [product]="{
-          ratingIconUrl: 'assets/images/star.png',
-          rating: 4.5,
-          title: 'Strawberry Blush Frost',
-          price: 1000,
-          productImageUrl: 'assets/images/strawberry.png',
-          favorite: false,
-          productId: 123,
-          productPath: '/product-details/123'
-        }"></app-product-card>
+              ratingIconUrl: 'assets/images/star.png',
+              rating: 4.5,
+              title: 'Strawberry Blush Frost',
+              price: 1000,
+              productImageUrl: 'assets/images/strawberry.png',
+              favorite: false,
+              productId: 123,
+              productPath: '/product-details/123'
+          }"></app-product-card>
     </swiper-slide>
   </swiper-container>
+
+
+  <!-- Bottom Navbar -->
+  <ion-navbar>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-icon name="home"></ion-icon>
+          Home
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon name="person"></ion-icon>
+          Account
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
 </ion-content>

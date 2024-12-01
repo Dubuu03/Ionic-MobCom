@@ -14,8 +14,8 @@ export class ProductCardComponent {
     price: number;
     productImageUrl: string;
     favorite?: boolean;
-    productId: number;  // Add productId
-    productPath: string; // Add productPath for routing
+    productId: number;
+    productPath: string; 
   };
 
   constructor(private router: Router) {
@@ -31,7 +31,7 @@ export class ProductCardComponent {
     };
   }
 
-  // Method to toggle the favorite status
+
   toggleFavorite() {
     this.product.favorite = !this.product.favorite;
   }
