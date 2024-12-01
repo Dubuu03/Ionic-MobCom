@@ -9,6 +9,8 @@ import { CustomButtonComponent } from '../custom-button/custom-button.component'
 import { ProductCardComponent } from '../product-card/product-card.component';
 
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
   declarations: [
     HomePage,
     ProductCardComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]  
 })
 export class HomePageModule {}

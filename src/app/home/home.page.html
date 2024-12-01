@@ -1,25 +1,107 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>HOME PAGE</ion-title>
+  <ion-toolbar class="combined-toolbar">
+    <!-- Logo and Title -->
+    <div class="top-section">
+      <ion-buttons slot="start">
+        <ion-img src="assets/images/CoffeeBean.png" alt="Logo" class="logo"></ion-img>
+      </ion-buttons>
+      <ion-title size="large" class="title">DejaBrew</ion-title>
+      <ion-buttons slot="end">
+        <ion-button fill="clear">
+          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+    <!-- Description -->
+    <p class="description">Every cup is a blast from the past.</p>
+
+    <!-- Search Bar -->
+    <ion-searchbar placeholder="Search for products..." debounce="500" class="search-bar"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">onboarding-4</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Swiper Container -->
+  <swiper-container [slidesPerView]="1" [spaceBetween]="10" [loop]="true" 
+    [navigation]="false">
+    <!-- Product Slides -->
+    <swiper-slide>
+      <app-product-card [product]="{
+          ratingIconUrl: 'assets/images/star.png',
+          rating: 4.5,
+          title: 'Strawberry Blush Frost',
+          price: 1000,
+          productImageUrl: 'assets/images/strawberry.png',
+          favorite: false,
+          productId: 123,
+          productPath: '/product-details/123'
+        }"></app-product-card>
+    </swiper-slide>
 
-  <app-product-card [product]="{
-      ratingIconUrl: 'assets/images/star.png',
-      rating: 4.5,
-      title: 'Strawberry Blush Frost',
-      price: 1000,
-      productImageUrl: 'assets/images/strawberry.png',
-      favorite: false,
-      productId: 123,
-      productPath: '/product-details/123' 
-    }">
-  </app-product-card>
+    <swiper-slide>
+      <app-product-card [product]="{
+          ratingIconUrl: 'assets/images/star.png',
+          rating: 4.5,
+          title: 'Strawberry Blush Frost',
+          price: 1000,
+          productImageUrl: 'assets/images/strawberry.png',
+          favorite: false,
+          productId: 123,
+          productPath: '/product-details/123'
+        }"></app-product-card>
+    </swiper-slide>
+    
+    <swiper-slide>
+      <app-product-card [product]="{
+          ratingIconUrl: 'assets/images/star.png',
+          rating: 4.5,
+          title: 'Strawberry Blush Frost',
+          price: 1000,
+          productImageUrl: 'assets/images/strawberry.png',
+          favorite: false,
+          productId: 123,
+          productPath: '/product-details/123'
+        }"></app-product-card>
+    </swiper-slide>
+    
+    <swiper-slide>
+      <app-product-card [product]="{
+          ratingIconUrl: 'assets/images/star.png',
+          rating: 4.5,
+          title: 'Strawberry Blush Frost',
+          price: 1000,
+          productImageUrl: 'assets/images/strawberry.png',
+          favorite: false,
+          productId: 123,
+          productPath: '/product-details/123'
+        }"></app-product-card>
+    </swiper-slide>
+
+    <swiper-slide>
+      <app-product-card [product]="{
+          ratingIconUrl: 'assets/images/star.png',
+          rating: 4.5,
+          title: 'Strawberry Blush Frost',
+          price: 1000,
+          productImageUrl: 'assets/images/strawberry.png',
+          favorite: false,
+          productId: 123,
+          productPath: '/product-details/123'
+        }"></app-product-card>
+    </swiper-slide>
+
+    <swiper-slide>
+      <app-product-card [product]="{
+          ratingIconUrl: 'assets/images/star.png',
+          rating: 4.5,
+          title: 'Strawberry Blush Frost',
+          price: 1000,
+          productImageUrl: 'assets/images/strawberry.png',
+          favorite: false,
+          productId: 123,
+          productPath: '/product-details/123'
+        }"></app-product-card>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
