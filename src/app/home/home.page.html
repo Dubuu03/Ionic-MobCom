@@ -21,49 +21,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="scrollable-content" [scrollEvents]="true">
+  <!-- Coffee and Snacks Section -->
+  <div class="coffee-container">
+    <div class="content">
+      <h1>Coffee for you,<br>brewed with déjà vu</h1>
 
-<!-- Coffee and Snacks Section -->
-<div class="coffee-container">
-  <div class="content">
-    <h1>Coffee for you,<br>brewed with déjà vu</h1>
+      <ion-button class="view-menu" expand="block" shape="round">
+        <span>view menu</span>
+        <ion-icon name="eye" slot="end"></ion-icon>
+      </ion-button>
 
-    <ion-button class="view-menu" expand="block" shape="round">
-      <span>view menu</span>
-      <ion-icon name="eye" slot="end"></ion-icon>
-    </ion-button>
-
-    <div class="icons">
-      <ion-icon name="cafe" class="icon"></ion-icon>
-      <ion-icon name="beer" class="icon"></ion-icon>
-      <ion-icon name="ice-cream" class="icon"></ion-icon>
-      <ion-icon name="fast-food" class="icon"></ion-icon>
+      <div class="icons">
+        <ion-icon name="cafe" class="icon"></ion-icon>
+        <ion-icon name="beer" class="icon"></ion-icon>
+        <ion-icon name="ice-cream" class="icon"></ion-icon>
+        <ion-icon name="fast-food" class="icon"></ion-icon>
+      </div>
+    </div>
+    <div class="image">
+      <img src="assets/images/snacks.PNG" alt="Coffee and snacks">
     </div>
   </div>
-  <div class="image">
-    <img src="assets/images/snacks.PNG" alt="Coffee and snacks">
-  </div>
-</div>
 
-<!-- Banner Section -->
-<div class="image-banner">
-  <img src="assets/images/Banner1.png" alt="Banner Image">
-</div>
+  <!-- Banner Section -->
+  <div class="image-banner">
+    <img src="assets/images/Banner1.png" alt="Banner Image">
+  </div>
 
   <!-- Best Sellers Label -->
   <div class="product-label">
     Best Sellers
   </div>
 
+  <!-- Best Seller Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <!-- Product Slides -->
     <swiper-slide>
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,
               title: 'Strawberry Blush Frost',
-              price: 1000,
-              productImageUrl: 'assets/images/strawberry.png',
+              price: 120,
+              productImageUrl: 'assets/images/Non-Coffee/Strawberry Blush Frost.PNG',
               favorite: false,
               productId: 123,
               productPath: '/product-details/123'
@@ -71,10 +70,10 @@
 
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
-              rating: 4.5,
-              title: 'Strawberry Blush Frost',
-              price: 1000,
-              productImageUrl: 'assets/images/strawberry.png',
+              rating: 4.3,
+              title: 'Lavender Green Chill',
+              price: 120,
+              productImageUrl: 'assets/images/Non-Coffee/Lavander Green Chill.PNG',
               favorite: false,
               productId: 123,
               productPath: '/product-details/123'
@@ -85,9 +84,9 @@
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,
-              title: 'Strawberry Blush Frost',
-              price: 1000,
-              productImageUrl: 'assets/images/strawberry.png',
+              title: 'Choco Deja Puff',
+              price: 135,
+              productImageUrl: 'assets/images/Pastry/Choco Deja Puff.PNG',
               favorite: false,
               productId: 123,
               productPath: '/product-details/123'
@@ -95,23 +94,23 @@
 
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
-              rating: 4.5,
-              title: 'Strawberry Blush Frost',
-              price: 1000,
-              productImageUrl: 'assets/images/strawberry.png',
+              rating: 4.4,
+              title: 'Caramel Kiss',
+              price: 100,
+              productImageUrl: 'assets/images/Hot/Coco-caramel Kiss.PNG',
               favorite: false,
               productId: 123,
               productPath: '/product-details/123'
           }"></app-product-card>
     </swiper-slide>
 
-    <swiper-slide>
+    <swiper-slide style="padding-right:10px">
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,
-              title: 'Strawberry Blush Frost',
-              price: 1000,
-              productImageUrl: 'assets/images/strawberry.png',
+              title: 'Black Noir',
+              price: 105,
+              productImageUrl: 'assets/images/Hot/Black Noir.PNG',
               favorite: false,
               productId: 123,
               productPath: '/product-details/123'
@@ -119,45 +118,120 @@
 
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
-              rating: 4.5,
-              title: 'Strawberry Blush Frost',
-              price: 1000,
-              productImageUrl: 'assets/images/strawberry.png',
+              rating: 4.7,
+              title: 'Clouded Bliss',
+              price: 130,
+              productImageUrl: 'assets/images/Cold/Clouded Bliss.PNG',
               favorite: false,
               productId: 123,
               productPath: '/product-details/123'
           }"></app-product-card>
     </swiper-slide>
   </swiper-container>
-  
+
+  <!-- Hot Drinks -->
+  <div class="product-label">
+    Brew-lliant Hot Drinks
+    <ion-button fill="clear" class="see-more-button" routerLink="/new-arrivals">
+      See More
+    </ion-button>
+  </div>
+
+  <!-- Hot Product Slides -->
+  <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
+    <swiper-slide>
+      <app-product-card [product]="{
+                ratingIconUrl: 'assets/images/star.png',
+                rating: 4.5,
+                title: 'Strawberry Blush Frost',
+                price: 120,
+                productImageUrl: 'assets/images/Non-Coffee/Strawberry Blush Frost.PNG',
+                favorite: false,
+                productId: 123,
+                productPath: '/product-details/123'
+            }"></app-product-card>
+
+      <app-product-card [product]="{
+                ratingIconUrl: 'assets/images/star.png',
+                rating: 4.3,
+                title: 'Lavender Green Chill',
+                price: 120,
+                productImageUrl: 'assets/images/Non-Coffee/Lavander Green Chill.PNG',
+                favorite: false,
+                productId: 123,
+                productPath: '/product-details/123'
+            }"></app-product-card>
+    </swiper-slide>
+
+    <swiper-slide>
+      <app-product-card [product]="{
+                ratingIconUrl: 'assets/images/star.png',
+                rating: 4.5,
+                title: 'Choco Deja Puff',
+                price: 135,
+                productImageUrl: 'assets/images/Pastry/Choco Deja Puff.PNG',
+                favorite: false,
+                productId: 123,
+                productPath: '/product-details/123'
+            }"></app-product-card>
+
+      <app-product-card [product]="{
+                ratingIconUrl: 'assets/images/star.png',
+                rating: 4.4,
+                title: 'Caramel Kiss',
+                price: 100,
+                productImageUrl: 'assets/images/Hot/Coco-caramel Kiss.PNG',
+                favorite: false,
+                productId: 123,
+                productPath: '/product-details/123'
+            }"></app-product-card>
+    </swiper-slide>
+
+    <swiper-slide style="padding-right:10px">
+      <app-product-card [product]="{
+                ratingIconUrl: 'assets/images/star.png',
+                rating: 4.5,
+                title: 'Black Noir',
+                price: 105,
+                productImageUrl: 'assets/images/Hot/Black Noir.PNG',
+                favorite: false,
+                productId: 123,
+                productPath: '/product-details/123'
+            }"></app-product-card>
+
+      <app-product-card [product]="{
+                ratingIconUrl: 'assets/images/star.png',
+                rating: 4.7,
+                title: 'Clouded Bliss',
+                price: 130,
+                productImageUrl: 'assets/images/Cold/Clouded Bliss.PNG',
+                favorite: false,
+                productId: 123,
+                productPath: '/product-details/123'
+            }"></app-product-card>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
 
+<!-- Footer (Navbar-like) -->
+<footer class="footer">
+  <!-- Home Button -->
+  <ion-button fill="clear" class="footer-button" routerLink="/home">
+    <ion-icon name="home"></ion-icon>
+  </ion-button>
 
-<!-- Bottom Tab Bar -->
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <!-- Home Tab -->
-    <ion-tab-button tab="home">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
+  <!-- Favorites Button -->
+  <ion-button fill="clear" class="footer-button" routerLink="/favorites">
+    <ion-icon name="heart"></ion-icon>
+  </ion-button>
 
-    <!-- Favorites Tab -->
-    <ion-tab-button tab="favorites">
-      <ion-icon name="heart"></ion-icon>
-      <ion-label>Favorites</ion-label>
-    </ion-tab-button>
+  <!-- Notifications Button -->
+  <ion-button fill="clear" class="footer-button" routerLink="/notifications">
+    <ion-icon name="notifications"></ion-icon>
+  </ion-button>
 
-    <!-- Notifications Tab -->
-    <ion-tab-button tab="notifications">
-      <ion-icon name="notifications"></ion-icon>
-      <ion-label>Notifications</ion-label>
-    </ion-tab-button>
-
-    <!-- Account Tab -->
-    <ion-tab-button tab="account">
-      <ion-icon name="person"></ion-icon>
-      <ion-label>Account</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+  <!-- Account Button -->
+  <ion-button fill="clear" class="footer-button" routerLink="/account">
+    <ion-icon name="person"></ion-icon>
+  </ion-button>
+</footer>
