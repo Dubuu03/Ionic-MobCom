@@ -3,12 +3,12 @@
     <!-- Logo and Title -->
     <div class="top-section">
       <ion-buttons slot="start">
-        <ion-img src="assets/images/CoffeeBean.png" alt="Logo" class="logo"></ion-img>
+        <ion-img src="assets/images/Logo.png" alt="Logo" class="logo"></ion-img>
       </ion-buttons>
       <ion-title size="large" class="title">DejaBrew</ion-title>
       <ion-buttons slot="end">
         <ion-button fill="clear">
-          <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+          <ion-icon class="cart" slot="icon-only" name="cart-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
     </div>
@@ -56,7 +56,7 @@
 
   <!-- Best Seller Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <swiper-slide>
+    <swiper-slide style="padding-left:20px">
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,
@@ -72,7 +72,7 @@
               ratingIconUrl: 'assets/images/star.png',
               rating: 4.3,
               title: 'Lavender Green Chill',
-              price: 120,
+              price: 125,
               productImageUrl: 'assets/images/Non-Coffee/Lavander Green Chill.PNG',
               favorite: false,
               productId: 123,
@@ -104,7 +104,7 @@
           }"></app-product-card>
     </swiper-slide>
 
-    <swiper-slide style="padding-right:10px">
+    <swiper-slide style="padding-right:20px">
       <app-product-card [product]="{
               ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,

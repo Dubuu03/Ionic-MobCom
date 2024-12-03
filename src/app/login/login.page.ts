@@ -45,8 +45,7 @@ export class LoginPage implements OnInit {
   }
 
   proceed() {
-    console.log(`Proceeding with ${this.platform} sign-in.`);
-    this.dismissModal();
+    window.location.href = '/home'; 
   }
 
   getPlatformLogoAndColor(platform: string): { logo: string, color: string } {

@@ -20,8 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'onboarding-4',
-    loadChildren: () => import('./onboarding-4/onboarding-4.module').then( m => m.Onboarding4PageModule)
+    path: 'onboarding',
+    loadChildren: () => import('./onboarding/onboarding.module').then( m => m.OnboardingPageModule)
+  },
+  {
+    path: 'onboarding-2',
+    loadChildren: () => import('./onboarding-2/onboarding-2.module').then( m => m.Onboarding2PageModule)
   },
 ];
 

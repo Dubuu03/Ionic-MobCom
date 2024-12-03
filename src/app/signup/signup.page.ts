@@ -20,4 +20,8 @@ export class SignupPage implements OnInit {
       this.showConfirmPassword = !this.showConfirmPassword;
     }
   }
+
+  proceed() {
+    window.location.href = '/home'; 
+  }
 }
