@@ -25,11 +25,10 @@ export class HomePage implements OnInit {
   updateSlidesPerView() {
     if (window.innerWidth >= 768) {
       this.slidesPerView = 2.1; 
+    }else if (window.innerWidth >= 650) {
+      this.slidesPerView = 1.8;
     }else if (window.innerWidth >= 520) {
       this.slidesPerView = 1.4;
-    }
-    else if (window.innerWidth >= 650) {
-      this.slidesPerView = 1.8;
     }else {
       this.slidesPerView = 1.1;  
     }

@@ -18,6 +18,13 @@
     max-width: 150px;
     transition: all 0.3s ease;
 }
+.product-title {
+        font-size: 8px;
+    }
+
+.product-price {
+        font-size: 1rem;
+    }
 
 /* Larger card sizes for medium screens */
 @media (min-width: 320px) {
@@ -58,6 +65,37 @@
 
     .product-card {
         max-width: 280px;
+    }
+}
+
+@media (min-width: 820px) {
+    .product-container {
+        max-width: 320px;
+        padding-top: 60px;
+    }
+
+    .product-card {
+        max-width: 300px;
+        padding: 0 12px 20px 12px;
+    }
+
+    .product-title {
+        font-size: 13px;
+    }
+
+    .product-price {
+        font-size: 1rem;
+    }
+
+    .product-image {
+        height: 120px;
+        width: 90px;
+        margin-top: -40px;
+    }
+
+    .favorite-icon {
+        width: 25px;
+        height: 25px;
     }
 }
 
@@ -158,3 +196,4 @@
     background-color: #f2f2f2;
     color: #633E27;
 }
+
