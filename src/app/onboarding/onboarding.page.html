@@ -1,43 +1,31 @@
 <ion-content>
   <swiper-container [spaceBetween]="50" [slidesPerView]="1" [loop]="false" [pagination]="{ clickable: true }"
-    (swiper)="onSwiper($event)" (slideChange)="onSlideChange($event)" [effect]="'slide'"  >
+    (swiper)="onSwiper($event)" (slideChange)="onSlideChange($event)" [effect]="'slide'">
 
     <!-- Slide 1 -->
-  <swiper-slide>
-    <div class="slide-content">
-      <!-- Skip Button -->
-      <div class="skip-button-container" *ngIf="currentSlideIndex < 2">
-        <button class="skip-button" (click)="skip()">Skip</button>
-      </div>
-      <div class="image-container">
-        <img src="assets/images/ob2.png" alt="Slide 1" class="slide-image" />
-        <div class="overlay">
-          <img src="assets/images/Logo.png" alt="Logo" class="logo" />
-          <p class="top">Welcome to</p>
-          <h1>DejaBrew</h1>
-          <p class="bot">Have you been here before?</p>
-          <div class="pagination-container"></div>
+    <swiper-slide>
+      <div class="slide-content">
+        <div class="image-container">
+          <div class="overlay">
+            <img src="assets/images/Logo.png" alt="Logo" class="logo" />
+            <p class="top">Welcome to</p>
+            <h1>DejaBrew</h1>
+            <p class="bot">Have you been here before?</p>
+            <div class="pagination-container"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </swiper-slide>
-
+    </swiper-slide>
 
     <!-- Slide 2 -->
     <swiper-slide>
       <div class="slide-content">
-        <!-- Skip Button -->
-        <div class="skip-button-container" *ngIf="currentSlideIndex < 2">
-          <button class="skip-button" (click)="skip()">Skip</button>
-        </div>
         <div class="image-container">
-          <img src="assets/images/ob1.png" alt="Slide 2" class="slide-image" />
           <div class="overlay">
-            <p  class="top">Taste the</p>
+            <p class="top">Taste the</p>
             <h1>Familiarity</h1>
-            <p class="bot">From the first sip to the last bite, our flavors evoke comforting memories with a twist of something's
-              new - like a
-              sweet sense of deja vu.</p>
+            <p class="bot">From the first sip to the last bite, our flavors evoke comforting memories with a twist of
+              something's new - like a sweet sense of deja vu.</p>
             <div class="pagination-container"></div>
           </div>
         </div>
@@ -48,20 +36,22 @@
     <swiper-slide>
       <div class="slide-content">
         <div class="image-container">
-          <img src="assets/images/ob3.png" alt="Slide 3" class="slide-image" />
           <div class="overlay last-slide">
             <p class="top">Sip, Savor, and</p>
             <h1>Repeat</h1>
-            <p  class="bot last-bot">Whether it’s your go-to brew or a pastry that feels like home, every visit is a delicious flashback you
-              won’t forget</p>
-            <div class="button-container">
-              <button class="get-started-button" (click)="goToGetStarted()">Get Started</button>
-            </div>
+            <p class="bot last-bot">Whether it’s your go-to brew or a pastry that feels like home, every visit is a
+              delicious flashback you won’t forget</p>
             <div class="pagination-container"></div>
           </div>
         </div>
       </div>
     </swiper-slide>
-
   </swiper-container>
+
+  <!-- Get Started Button Outside the Swiper -->
+  <div class="button-container">
+      <a routerLink="/signup">
+        <app-custom-button text="Register" customClass="signUpButton"></app-custom-button>
+      </a>
+  </div>
 </ion-content>

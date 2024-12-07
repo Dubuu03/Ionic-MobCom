@@ -27,6 +27,11 @@ const routes: Routes = [
     path: 'onboarding-2',
     loadChildren: () => import('./onboarding-2/onboarding-2.module').then( m => m.Onboarding2PageModule)
   },
+  {
+    path: 'landing',
+    loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
+  },
+
 ];
 
 @NgModule({

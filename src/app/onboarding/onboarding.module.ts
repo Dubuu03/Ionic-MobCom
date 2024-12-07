@@ -8,13 +8,15 @@ import { OnboardingPageRoutingModule } from './onboarding-routing.module';
 
 import { OnboardingPage } from './onboarding.page';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OnboardingPageRoutingModule
+    OnboardingPageRoutingModule,
+    CustomButtonComponent,
   ],
   declarations: [OnboardingPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]  
