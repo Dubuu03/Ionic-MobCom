@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class ProductCardComponent {
   @Input() product: {
-    ratingIconUrl: string;
     rating: number;
     title: string;
     price: number;
@@ -20,7 +19,6 @@ export class ProductCardComponent {
 
   constructor(private router: Router) {
     this.product = {
-      ratingIconUrl: '',
       rating: 0,
       title: '',
       price: 0,

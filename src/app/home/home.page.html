@@ -49,6 +49,10 @@
     <img src="assets/images/Banner1.png" alt="Banner Image">
   </div>
 
+
+
+
+
   <!-- Best Sellers Label -->
   <div class="product-label best-label">
     Best Sellers
@@ -58,7 +62,6 @@
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
     <swiper-slide style="padding-left:20px">
         <app-product-card [product]="{
-                    ratingIconUrl: 'assets/images/star.png',
                     rating: 4.5,
                     title: 'Strawberry Blush Frost',
                     price: 120,
@@ -69,7 +72,6 @@
                 }"></app-product-card>
     
         <app-product-card [product]="{
-                    ratingIconUrl: 'assets/images/star.png',
                     rating: 4.3,
                     title: 'Lavender Green Chill',
                     price: 125,
@@ -82,7 +84,6 @@
     
       <swiper-slide>
         <app-product-card [product]="{
-                    ratingIconUrl: 'assets/images/star.png',
                     rating: 4.5,
                     title: 'Choco Deja Puff',
                     price: 135,
@@ -93,7 +94,6 @@
                 }"></app-product-card>
     
         <app-product-card [product]="{
-                    ratingIconUrl: 'assets/images/star.png',
                     rating: 4.4,
                     title: 'Caramel Kiss',
                     price: 100,
@@ -106,7 +106,6 @@
     
       <swiper-slide style="padding-right:20px">
         <app-product-card [product]="{
-                    ratingIconUrl: 'assets/images/star.png',
                     rating: 4.5,
                     title: 'Black Noir',
                     price: 105,
@@ -116,8 +115,7 @@
                     productPath: '/product-details/123'
                 }"></app-product-card>
     
-        <app-product-card [product]="{
-                    ratingIconUrl: 'assets/images/star.png',
+        <app-product-card [product]="{                
                     rating: 4.7,
                     title: 'Clouded Bliss',
                     price: 130,
@@ -142,7 +140,6 @@
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
     <swiper-slide style="padding-left:20px">
       <app-product-card [product]="{
-              ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,
               title: 'Black Stallion',
               price: 120,
@@ -153,7 +150,6 @@
           }"></app-product-card>
 
       <app-product-card [product]="{
-              ratingIconUrl: 'assets/images/star.png',
               rating: 4.3,
               title: 'Creamy Cloud',
               price: 125,
@@ -166,7 +162,6 @@
 
     <swiper-slide>
       <app-product-card [product]="{
-              ratingIconUrl: 'assets/images/star.png',
               rating: 4.5,
               title: 'White Wonder',
               price: 135,
@@ -176,8 +171,7 @@
               productPath: '/product-details/123'
           }"></app-product-card>
 
-      <app-product-card [product]="{
-              ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{           
               rating: 4.4,
               title: 'Toffee Twist Brew',
               price: 100,
@@ -189,8 +183,7 @@
     </swiper-slide>
 
     <swiper-slide style="padding-right:20px">
-      <app-product-card [product]="{
-              ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{             
               rating: 4.5,
               title: 'Caramel Delight',
               price: 105,
@@ -200,8 +193,7 @@
               productPath: '/product-details/123'
           }"></app-product-card>
 
-      <app-product-card [product]="{
-              ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{            
               rating: 4.7,
               title: 'Black Noir',
               price: 130,
@@ -230,8 +222,7 @@
   <!-- Cold Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
     <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{             
                 rating: 4.5,
                 title: 'Herbal Frost',
                 price: 120,
@@ -241,8 +232,7 @@
                 productPath: '/product-details/123'
             }"></app-product-card>
   
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{              
                 rating: 4.3,
                 title: 'Marble Ice',
                 price: 125,
@@ -254,8 +244,7 @@
     </swiper-slide>
   
     <swiper-slide>
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{               
                 rating: 4.5,
                 title: 'Vanilla Bean Brew',
                 price: 135,
@@ -265,8 +254,7 @@
                 productPath: '/product-details/123'
             }"></app-product-card>
   
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{             
                 rating: 4.4,
                 title: 'Silk Brew',
                 price: 100,
@@ -278,8 +266,7 @@
     </swiper-slide>
   
     <swiper-slide style="padding-right:20px">
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{            
                 rating: 4.5,
                 title: 'Golden Cascad',
                 price: 105,
@@ -289,8 +276,7 @@
                 productPath: '/product-details/123'
             }"></app-product-card>
   
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{             
                 rating: 4.7,
                 title: 'Caramel Drift',
                 price: 130,
@@ -314,8 +300,7 @@
   <!-- Non-Coffee Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
     <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{              
                 rating: 4.5,
                 title: 'Mango Wave',
                 price: 120,
@@ -325,8 +310,7 @@
                 productPath: '/product-details/123'
             }"></app-product-card>
   
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{           
                 rating: 4.3,
                 title: 'Fresh Berry Burst',
                 price: 125,
@@ -338,8 +322,7 @@
     </swiper-slide>
   
     <swiper-slide>
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{              
                 rating: 4.5,
                 title: 'Berry Cool Milkshake',
                 price: 135,
@@ -350,7 +333,6 @@
             }"></app-product-card>
   
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.4,
                 title: 'Mango Matcha',
                 price: 100,
@@ -363,7 +345,6 @@
   
     <swiper-slide style="padding-right:20px">
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.5,
                 title: 'Dragon Bliss',
                 price: 105,
@@ -374,7 +355,6 @@
             }"></app-product-card>
   
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.7,
                 title: 'Cocomango Cooler',
                 price: 130,
@@ -402,8 +382,7 @@
   <!-- Pastry Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
     <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
+      <app-product-card [product]="{            
                 rating: 4.5,
                 title: 'BrewMille Feuille',
                 price: 120,
@@ -414,7 +393,6 @@
             }"></app-product-card>
   
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.3,
                 title: 'Berry Blast',
                 price: 125,
@@ -427,7 +405,6 @@
   
     <swiper-slide>
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.5,
                 title: 'Raspberry Rewind',
                 price: 135,
@@ -438,7 +415,6 @@
             }"></app-product-card>
   
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.4,
                 title: 'Peachy Memory',
                 price: 100,
@@ -451,7 +427,6 @@
   
     <swiper-slide style="padding-right:20px">
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.5,
                 title: 'CinnaDeja Delight',
                 price: 105,
@@ -462,7 +437,6 @@
             }"></app-product-card>
   
       <app-product-card [product]="{
-                ratingIconUrl: 'assets/images/star.png',
                 rating: 4.7,
                 title: 'Choco Deja Puff',
                 price: 130,

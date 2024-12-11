@@ -4,14 +4,14 @@
       <!-- Row 1, Column 1: Rating and Title -->
       <div class="product-content">
         <div class="rating-container" aria-label="Product rating">
-          <img [src]="product.ratingIconUrl" class="rating-icon" alt="Rating star icon" loading="lazy" />
+          <img [src]="'assets/images/star.png'" class="rating-icon" alt="Rating star icon" />
           <div class="rating-value">{{product.rating}}</div>
         </div>
         <h2 class="product-title">{{product.title}}</h2>
       </div>
 
       <!-- Product Image -->
-      <img [src]="product.productImageUrl" class="product-image" [alt]="product.title" loading="lazy" />
+      <img [src]="product.productImageUrl" class="product-image" [alt]="product.title"  />
     </div>
 
     <!--  Price -->
