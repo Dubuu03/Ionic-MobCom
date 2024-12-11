@@ -7,6 +7,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  products: Array<any> = [];
   
   slidesPerView: number = 1.1;  // Default value for larger screens
 
@@ -14,6 +15,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.updateSlidesPerView(); 
+    
   }
 
   @HostListener('window:resize', ['$event'])
