@@ -445,26 +445,42 @@
   </swiper-container>
 
   <!-- Footer -->
-  <footer class="footer">
-    <!-- Home Button -->
-    <ion-button fill="clear" class="footer-button" routerLink="/home">
-      <ion-icon name="home"></ion-icon>
-    </ion-button>
-    
-    <!-- Favorites Button -->
-    <ion-button fill="clear" class="footer-button" routerLink="/favorites">
-      <ion-icon name="heart"></ion-icon>
-    </ion-button>
-    
-    <!-- Notifications Button -->
-    <ion-button fill="clear" class="footer-button" routerLink="/notifications">
-      <ion-icon name="notifications"></ion-icon>
-    </ion-button>
-    
-    <!-- Account Button -->
-    <ion-button fill="clear" class="footer-button" routerLink="/account">
-      <ion-icon name="person"></ion-icon>
-    </ion-button>
-  </footer>
+  <div class="navigation">
+    <ul>
+      <li class="list active" >
+        <a href="">
+          <span class="footer-icon">
+            <ion-icon name="home"></ion-icon>
+          </span>
+          <span class="text">Home</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="">
+          <span class="footer-icon">
+            <ion-icon name="heart"></ion-icon>
+          </span>
+          <span class="text">Favorites</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="">
+          <span class="footer-icon">
+            <ion-icon name="notifications"></ion-icon>
+          </span>
+          <span class="text">Notifications</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="">
+          <span class="footer-icon">
+            <ion-icon name="person"></ion-icon>
+          </span>
+          <span class="text">Profile</span>
+        </a>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+  </div>
 </ion-content>
 
