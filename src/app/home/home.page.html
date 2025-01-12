@@ -455,16 +455,16 @@
           <span class="text">Home</span>
         </a>
       </li>
-      <li class="list">
+      <li class="list" (click)="goToFavorites()">
         <a href="">
-          <span class="footer-icon">
+          <span class="footer-icon" >
             <ion-icon name="heart"></ion-icon>
           </span>
           <span class="text">Favorites</span>
         </a>
       </li>
-      <li class="list">
-        <a href="">
+      <li class="list" (click)="goToNotifications()">
+        <a routerLink="/notifications">
           <span class="footer-icon">
             <ion-icon name="notifications"></ion-icon>
           </span>

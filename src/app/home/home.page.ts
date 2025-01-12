@@ -35,4 +35,11 @@ export class HomePage implements OnInit {
       this.slidesPerView = 1.1;  
     }
   }
+
+    goToNotifications() {
+    window.location.href = '/notifications';
+  }
+  goToFavorites() {
+    window.location.href = '/favorites';
+  }
 }
