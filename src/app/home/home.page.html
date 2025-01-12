@@ -54,74 +54,17 @@
     Best Sellers
   </div>
 
-  <!-- Best Seller Product Slides -->
-  <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <swiper-slide style="padding-left:20px">
-        <app-product-card [product]="{
-                    rating: 4.5,
-                    title: 'Strawberry Blush Frost',
-                    price: 120,
-                    productImageUrl: 'assets/images/Non-Coffee/Strawberry Blush Frost.PNG',
-                    favorite: false,
-                    productId: 123,
-                    productPath: '/product-details/123'
-                }"></app-product-card>
-    
-        <app-product-card [product]="{
-                    rating: 4.3,
-                    title: 'Lavender Green Chill',
-                    price: 125,
-                    productImageUrl: 'assets/images/Non-Coffee/Lavander Green Chill.PNG',
-                    favorite: false,
-                    productId: 123,
-                    productPath: '/product-details/123'
-                }"></app-product-card>
-      </swiper-slide>
-    
-      <swiper-slide>
-        <app-product-card [product]="{
-                    rating: 4.5,
-                    title: 'Choco Deja Puff',
-                    price: 135,
-                    productImageUrl: 'assets/images/Pastry/Choco Deja Puff.PNG',
-                    favorite: false,
-                    productId: 123,
-                    productPath: '/product-details/123'
-                }"></app-product-card>
-    
-        <app-product-card [product]="{
-                    rating: 4.4,
-                    title: 'Caramel Kiss',
-                    price: 100,
-                    productImageUrl: 'assets/images/Hot/Coco-caramel Kiss.PNG',
-                    favorite: false,
-                    productId: 123,
-                    productPath: '/product-details/123'
-                }"></app-product-card>
-      </swiper-slide>
-    
-      <swiper-slide style="padding-right:20px">
-        <app-product-card [product]="{
-                    rating: 4.5,
-                    title: 'Black Noir',
-                    price: 105,
-                    productImageUrl: 'assets/images/Hot/Black Noir.PNG',
-                    favorite: false,
-                    productId: 123,
-                    productPath: '/product-details/123'
-                }"></app-product-card>
-    
-        <app-product-card [product]="{                
-                    rating: 4.7,
-                    title: 'Clouded Bliss',
-                    price: 130,
-                    productImageUrl: 'assets/images/Cold/Clouded Bliss.PNG',
-                    favorite: false,
-                    productId: 123,
-                    productPath: '/product-details/123'
-                }"></app-product-card>
-      </swiper-slide>
-  </swiper-container>
+<!-- Best Seller Product Slides -->
+<swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
+<swiper-slide *ngFor="let i of getSlideIndexes(bestSellerProducts,2); let index = index" [ngClass]="{
+    'first-slide': index === 0, 
+    'last-slide': index === getSlideIndexes(bestSellerProducts,2).length - 1
+  }">
+    <app-product-card [product]="bestSellerProducts[i]" *ngIf="bestSellerProducts[i]"></app-product-card>
+    <app-product-card [product]="bestSellerProducts[i + 1]" *ngIf="bestSellerProducts[i + 1]"></app-product-card>
+  </swiper-slide>
+
+</swiper-container>
 
 
   <!-- Hot Drinks -->
@@ -134,72 +77,15 @@
 
   <!-- Hot Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{
-              rating: 4.5,
-              title: 'Black Stallion',
-              price: 120,
-              productImageUrl: 'assets/images/Hot/Black Stallion Roast.PNG',
-              favorite: false,
-              productId: 123,
-              productPath: '/product-details/123'
-          }"></app-product-card>
-
-      <app-product-card [product]="{
-              rating: 4.3,
-              title: 'Creamy Cloud',
-              price: 125,
-              productImageUrl: 'assets/images/Hot/Creamy Cloud Mocha.PNG',
-              favorite: false,
-              productId: 123,
-              productPath: '/product-details/123'
-          }"></app-product-card>
-    </swiper-slide>
-
-    <swiper-slide>
-      <app-product-card [product]="{
-              rating: 4.5,
-              title: 'White Wonder',
-              price: 135,
-              productImageUrl: 'assets/images/Hot/White Wonder Mocha.PNG',
-              favorite: false,
-              productId: 123,
-              productPath: '/product-details/123'
-          }"></app-product-card>
-
-      <app-product-card [product]="{           
-              rating: 4.4,
-              title: 'Toffee Twist Brew',
-              price: 100,
-              productImageUrl: 'assets/images/Hot/Toffee Twist Brew.PNG',
-              favorite: false,
-              productId: 123,
-              productPath: '/product-details/123'
-          }"></app-product-card>
-    </swiper-slide>
-
-    <swiper-slide style="padding-right:20px">
-      <app-product-card [product]="{             
-              rating: 4.5,
-              title: 'Caramel Delight',
-              price: 105,
-              productImageUrl: 'assets/images/Hot/Caramel Fudge Delight.PNG',
-              favorite: false,
-              productId: 123,
-              productPath: '/product-details/123'
-          }"></app-product-card>
-
-      <app-product-card [product]="{            
-              rating: 4.7,
-              title: 'Black Noir',
-              price: 130,
-              productImageUrl: 'assets/images/Hot/Black Noir.PNG',
-              favorite: false,
-              productId: 123,
-              productPath: '/product-details/123'
-          }"></app-product-card>
+    <swiper-slide *ngFor="let i of getSlideIndexes(hotProducts,2); let index = index" [ngClass]="{
+        'first-slide': index === 0, 
+        'last-slide': index === getSlideIndexes(hotProducts,2).length - 1
+      }">
+      <app-product-card [product]="hotProducts[i]" *ngIf="hotProducts[i]"></app-product-card>
+      <app-product-card [product]="hotProducts[i + 1]" *ngIf="hotProducts[i + 1]"></app-product-card>
     </swiper-slide>
   </swiper-container>
+
 
   <!-- Banner 2 -->
   <div class="image-banner">
@@ -217,73 +103,14 @@
 
   <!-- Cold Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{             
-                rating: 4.5,
-                title: 'Herbal Frost',
-                price: 120,
-                productImageUrl: 'assets/images/Cold/Herbal Frost.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{              
-                rating: 4.3,
-                title: 'Marble Ice',
-                price: 125,
-                productImageUrl: 'assets/images/Cold/Marble Ice.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-    </swiper-slide>
-  
-    <swiper-slide>
-      <app-product-card [product]="{               
-                rating: 4.5,
-                title: 'Vanilla Bean Brew',
-                price: 135,
-                productImageUrl: 'assets/images/Cold/Vanilla Bean Brew.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{             
-                rating: 4.4,
-                title: 'Silk Brew',
-                price: 100,
-                productImageUrl: 'assets/images/Cold/Silk Brew.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-    </swiper-slide>
-  
-    <swiper-slide style="padding-right:20px">
-      <app-product-card [product]="{            
-                rating: 4.5,
-                title: 'Golden Cascad',
-                price: 105,
-                productImageUrl: 'assets/images/Cold/Golden Cascad.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{             
-                rating: 4.7,
-                title: 'Caramel Drift',
-                price: 130,
-                productImageUrl: 'assets/images/Cold/Caramel Drift.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
+    <swiper-slide *ngFor="let i of getSlideIndexes(coldProducts, 2); let index = index" [ngClass]="{
+          'first-slide': index === 0, 
+          'last-slide': index === getSlideIndexes(coldProducts, 2).length - 1
+        }">
+      <app-product-card [product]="coldProducts[i]" *ngIf="coldProducts[i]"></app-product-card>
+      <app-product-card [product]="coldProducts[i + 1]" *ngIf="coldProducts[i + 1]"></app-product-card>
     </swiper-slide>
   </swiper-container>
-
 
   <!-- Non-Coffee -->
   <div class="product-label noncoffee-label">
@@ -295,70 +122,12 @@
 
   <!-- Non-Coffee Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{              
-                rating: 4.5,
-                title: 'Mango Wave',
-                price: 120,
-                productImageUrl: 'assets/images/Non-Coffee/Mango Cream Wave.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{           
-                rating: 4.3,
-                title: 'Fresh Berry Burst',
-                price: 125,
-                productImageUrl: 'assets/images/Non-Coffee/Fresh Berry Burst.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-    </swiper-slide>
-  
-    <swiper-slide>
-      <app-product-card [product]="{              
-                rating: 4.5,
-                title: 'Berry Cool Milkshake',
-                price: 135,
-                productImageUrl: 'assets/images/Non-Coffee/Berry Cool Milkshake.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{
-                rating: 4.4,
-                title: 'Mango Matcha',
-                price: 100,
-                productImageUrl: 'assets/images/Non-Coffee/Mango Matcha Delight.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-    </swiper-slide>
-  
-    <swiper-slide style="padding-right:20px">
-      <app-product-card [product]="{
-                rating: 4.5,
-                title: 'Dragon Bliss',
-                price: 105,
-                productImageUrl: 'assets/images/Non-Coffee/Pink Dragon Bliss.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{
-                rating: 4.7,
-                title: 'Cocomango Cooler',
-                price: 130,
-                productImageUrl: 'assets/images/Non-Coffee/Coco Mango Cooler.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
+    <swiper-slide *ngFor="let i of getSlideIndexes(nonCoffeeProducts, 2); let index = index" [ngClass]="{
+          'first-slide': index === 0, 
+          'last-slide': index === getSlideIndexes(nonCoffeeProducts, 2).length - 1
+        }">
+      <app-product-card [product]="nonCoffeeProducts[i]" *ngIf="nonCoffeeProducts[i]"></app-product-card>
+      <app-product-card [product]="nonCoffeeProducts[i + 1]" *ngIf="nonCoffeeProducts[i + 1]"></app-product-card>
     </swiper-slide>
   </swiper-container>
 
@@ -377,72 +146,15 @@
 
   <!-- Pastry Product Slides -->
   <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-    <swiper-slide style="padding-left:20px">
-      <app-product-card [product]="{            
-                rating: 4.5,
-                title: 'BrewMille Feuille',
-                price: 120,
-                productImageUrl: 'assets/images/Pastry/BrewMille Feuille.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{
-                rating: 4.3,
-                title: 'Berry Blast',
-                price: 125,
-                productImageUrl: 'assets/images/Pastry/Berry Cheesy Blast.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-    </swiper-slide>
-  
-    <swiper-slide>
-      <app-product-card [product]="{
-                rating: 4.5,
-                title: 'Raspberry Rewind',
-                price: 135,
-                productImageUrl: 'assets/images/Pastry/Raspberry Rewind.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{
-                rating: 4.4,
-                title: 'Peachy Memory',
-                price: 100,
-                productImageUrl: 'assets/images/Pastry/Peachy Keen Memory.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-    </swiper-slide>
-  
-    <swiper-slide style="padding-right:20px">
-      <app-product-card [product]="{
-                rating: 4.5,
-                title: 'CinnaDeja Delight',
-                price: 105,
-                productImageUrl: 'assets/images/Pastry/CinnaDeja Delight.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
-  
-      <app-product-card [product]="{
-                rating: 4.7,
-                title: 'Choco Deja Puff',
-                price: 130,
-                productImageUrl: 'assets/images/Pastry/Choco Deja Puff.PNG',
-                favorite: false,
-                productId: 123,
-                productPath: '/product-details/123'
-            }"></app-product-card>
+    <swiper-slide *ngFor="let i of getSlideIndexes(pastryProducts, 2); let index = index" [ngClass]="{
+          'first-slide': index === 0, 
+          'last-slide': index === getSlideIndexes(pastryProducts, 2).length - 1
+        }">
+      <app-product-card [product]="pastryProducts[i]" *ngIf="pastryProducts[i]"></app-product-card>
+      <app-product-card [product]="pastryProducts[i + 1]" *ngIf="pastryProducts[i + 1]"></app-product-card>
     </swiper-slide>
   </swiper-container>
+
 
   <!-- Footer -->
   <div class="navigation">
@@ -456,7 +168,7 @@
         </a>
       </li>
       <li class="list" (click)="goToFavorites()">
-        <a href="">
+        <a href="/favorites">
           <span class="footer-icon" >
             <ion-icon name="heart"></ion-icon>
           </span>

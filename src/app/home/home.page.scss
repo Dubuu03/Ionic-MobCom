@@ -327,7 +327,12 @@ app-product-card {
     border-radius: 50%;
     border: 6px solid #F9F2ED;
 }
-
+.last-slide {
+    padding-right: 20px;
+}
+.first-slide {
+    padding-left: 20px;
+}
 /* Responsive Style */
 @media (max-width: 768px) {
     ion-content{
