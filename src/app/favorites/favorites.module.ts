@@ -8,13 +8,17 @@ import { FavoritesPageRoutingModule } from './favorites-routing.module';
 
 import { FavoritesPage } from './favorites.page';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FavoritesPageRoutingModule
+    FavoritesPageRoutingModule,
+    SharedModule
+
   ],
-  declarations: [FavoritesPage]
+  declarations: [FavoritesPage,]
 })
 export class FavoritesPageModule {}

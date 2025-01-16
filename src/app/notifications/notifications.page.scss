@@ -147,6 +147,7 @@ ion-list {
     align-items: center;
     display: flex;
     z-index: 100;
+    border-top: solid 3px #F9F2ED;
 }
 
 .navigation ul {
@@ -186,7 +187,7 @@ ion-list {
 }
 
 .navigation ul li.active a .footer-icon {
-    transform: translateY(-15px);
+    transform: translateY(-10px);
 }
 
 .navigation ul li a .text {
@@ -216,4 +217,13 @@ ion-list {
 }
 
 
-
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .indicator {
+        left: 27.75rem;
+    }
+    .navigation ul {
+        padding-left: 80px ;
+        padding-right: 70px;
+    }
+}

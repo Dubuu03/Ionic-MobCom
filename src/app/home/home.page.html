@@ -7,7 +7,7 @@
       </ion-buttons>
       <ion-title size="large" class="title">DejaBrew</ion-title>
       <ion-buttons slot="end">
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="goToCart()">
           <ion-icon class="cart" slot="icon-only" name="cart-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -48,23 +48,23 @@
   <div class="image-banner">
     <img src="assets/images/Banner1.png" alt="Banner Image">
   </div>
-  
+
   <!-- Best Sellers Label -->
   <div class="product-label best-label">
     Best Sellers
   </div>
 
-<!-- Best Seller Product Slides -->
-<swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
-<swiper-slide *ngFor="let i of getSlideIndexes(bestSellerProducts,2); let index = index" [ngClass]="{
+  <!-- Best Seller Product Slides -->
+  <swiper-container [slidesPerView]="slidesPerView" [spaceBetween]="5" [loop]="false" [navigation]="false">
+    <swiper-slide *ngFor="let i of getSlideIndexes(bestSellerProducts,2); let index = index" [ngClass]="{
     'first-slide': index === 0, 
     'last-slide': index === getSlideIndexes(bestSellerProducts,2).length - 1
   }">
-    <app-product-card [product]="bestSellerProducts[i]" *ngIf="bestSellerProducts[i]"></app-product-card>
-    <app-product-card [product]="bestSellerProducts[i + 1]" *ngIf="bestSellerProducts[i + 1]"></app-product-card>
-  </swiper-slide>
+      <app-product-card [product]="bestSellerProducts[i]" *ngIf="bestSellerProducts[i]"></app-product-card>
+      <app-product-card [product]="bestSellerProducts[i + 1]" *ngIf="bestSellerProducts[i + 1]"></app-product-card>
+    </swiper-slide>
 
-</swiper-container>
+  </swiper-container>
 
 
   <!-- Hot Drinks -->
@@ -93,7 +93,7 @@
   </div>
 
 
-    <!-- Cold Drinks -->
+  <!-- Cold Drinks -->
   <div class="product-label cold-label">
     Deja-Brewze Cold Drinks
     <ion-button fill="clear" class="see-more-button" routerLink="/new-arrivals">
@@ -137,7 +137,7 @@
   </div>
 
   <!-- Pastry -->
-  <div class="product-label pastry-label" >
+  <div class="product-label pastry-label">
     Flashback Bites
     <ion-button fill="clear" class="see-more-button" routerLink="/new-arrivals">
       See More
@@ -153,30 +153,32 @@
       <app-product-card [product]="pastryProducts[i]" *ngIf="pastryProducts[i]"></app-product-card>
       <app-product-card [product]="pastryProducts[i + 1]" *ngIf="pastryProducts[i + 1]"></app-product-card>
     </swiper-slide>
-  </swiper-container>
+  </swiper-container> <br>
 
+
+</ion-content>
 
   <!-- Footer -->
   <div class="navigation">
     <ul>
-      <li class="list active" >
-        <a href="">
+      <li class="list active">
+        <a>
           <span class="footer-icon">
             <ion-icon name="home"></ion-icon>
           </span>
           <span class="text">Home</span>
         </a>
       </li>
-      <li class="list" (click)="goToFavorites()">
-        <a href="/favorites">
-          <span class="footer-icon" >
+      <li class="list">
+        <a (click)="goToFavorites()">
+          <span class="footer-icon">
             <ion-icon name="heart"></ion-icon>
           </span>
           <span class="text">Favorites</span>
         </a>
       </li>
-      <li class="list" (click)="goToNotifications()">
-        <a routerLink="/notifications">
+      <li class="list">
+        <a (click)="goToNotifications()">
           <span class="footer-icon">
             <ion-icon name="notifications"></ion-icon>
           </span>
@@ -184,7 +186,7 @@
         </a>
       </li>
       <li class="list">
-        <a href="">
+        <a (click)="openProfileModal()">
           <span class="footer-icon">
             <ion-icon name="person"></ion-icon>
           </span>
@@ -194,5 +196,3 @@
       <div class="indicator"></div>
     </ul>
   </div>
-</ion-content>
-

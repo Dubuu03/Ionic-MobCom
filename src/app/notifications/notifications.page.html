@@ -7,7 +7,7 @@
       </ion-buttons>
       <ion-title size="large" class="title">Notifications</ion-title>
       <ion-buttons slot="end">
-        <ion-button fill="clear">
+        <ion-button fill="clear" (click)="goToCart()">
           <ion-icon class="cart" slot="icon-only" name="cart-outline"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -53,6 +53,7 @@
   
 
 </ion-content>
+
   <!-- Footer -->
   <div class="navigation">
     <ul>
@@ -81,7 +82,7 @@
         </a>
       </li>
       <li class="list">
-        <a routerLink="/profile" >
+        <a (click)="openProfileModal()">
           <span class="footer-icon">
             <ion-icon name="person"></ion-icon>
           </span>

@@ -6,9 +6,9 @@
         <ion-img src="assets/images/Logo.png" alt="Logo" class="logo"></ion-img>
       </ion-buttons>
       <ion-title size="large" class="title">Favorites</ion-title>
-      <ion-buttons slot="end">
+      <ion-buttons slot="end" (click)="goToCart()">
         <ion-button fill="clear">
-          <ion-icon class="cart" slot="icon-only" name="cart-outline"></ion-icon>
+          <ion-icon class="cart" slot="icon-only" name="cart-outline" ></ion-icon>
         </ion-button>
       </ion-buttons>
     </div>
@@ -49,7 +49,7 @@
           <p class="category">{{item.category}}</p>
           <div class="rating">
             <ion-icon name="star"></ion-icon>
-            <span>{{item.rating}}</span>
+            <span>{{ item.rating | number:'1.1-1' }}</span>
           </div>
         </div>
         <ion-button fill="clear" (click)="toggleFavorite(item)" class="favorite-button">
@@ -60,8 +60,10 @@
     </ion-item>
   </ion-list>
 
-  <br><br><br><br>
+  <br><br><br>
 </ion-content>
+
+
 <!-- Footer -->
 <div class="navigation">
   <ul>
@@ -90,7 +92,7 @@
       </a>
     </li>
     <li class="list">
-      <a routerLink="/profile">
+      <a (click)="openProfileModal()">
         <span class="footer-icon">
           <ion-icon name="person"></ion-icon>
         </span>

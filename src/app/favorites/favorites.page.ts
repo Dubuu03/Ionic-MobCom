@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController, ModalController } from '@ionic/angular';
+import { ProfileComponent } from '../profile/profile.component';
+import { Router } from '@angular/router'; // Import Router for navigation
 
 interface FavoriteItem {
   name: string;
@@ -60,24 +63,55 @@ export class FavoritesPage implements OnInit {
     }
   ];
 
+  constructor(
+    private toastController: ToastController,
+    private modalCtrl: ModalController, // Injecting ModalController
+    private router: Router // Injecting Router
+  ) { }
+
+  ngOnInit() {}
+
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 2000,
+      position: 'bottom'
+    });
+    toast.present();
+  }
+
   clearAll() {
     this.favorites = [];
+    this.presentToast('All favorites have been cleared!');
   }
 
   toggleFavorite(item: FavoriteItem) {
     item.isFavorite = !item.isFavorite;
+    if (!item.isFavorite) {
+      this.presentToast(`${item.name} has been removed from favorites.`);
+    }
     this.favorites = this.favorites.filter(favorite => favorite.isFavorite);
   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  // Navigation methods with Router
   goToHome() {
-    window.location.href = '/home';
+    this.router.navigate(['/home']);  // Use Router for navigation
   }
+
+  goToCart() {
+    this.router.navigate(['/cart']);  // Use Router for navigation
+  }
+
   goToNotifications() {
-    window.location.href = '/notifications';
+    this.router.navigate(['/notifications']);  // Use Router for navigation
   }
+
+  // Open Profile modal
+  async openProfileModal() {
+    const modal = await this.modalCtrl.create({
+      component: ProfileComponent
+    });
+    return await modal.present();
+  }
+
 }

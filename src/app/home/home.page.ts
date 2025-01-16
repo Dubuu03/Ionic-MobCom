@@ -1,5 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-
+import { ToastController, ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { ProfileComponent } from '../profile/profile.component';
 @Component({
   selector: 'app-home',  
   templateUrl: './home.page.html',
@@ -284,7 +286,11 @@ getSlideIndexes(products: any[], productsPerSlide: number) {
 }
 
 
-  constructor() {}
+  constructor(
+    private toastController: ToastController,
+    private modalCtrl: ModalController, // Injecting ModalController
+    private router: Router // Injecting Router
+  ) { }
 
   ngOnInit() {
     this.updateSlidesPerView(); 
@@ -314,5 +320,17 @@ getSlideIndexes(products: any[], productsPerSlide: number) {
   }
   goToFavorites() {
     window.location.href = '/favorites';
+  }
+
+    goToCart() {
+    window.location.href = '/cart';
+  }
+
+    // Open Profile modal
+  async openProfileModal() {
+    const modal = await this.modalCtrl.create({
+      component: ProfileComponent
+    });
+    return await modal.present();
   }
 }

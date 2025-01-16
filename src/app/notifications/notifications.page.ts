@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
+import { ProfileComponent } from '../profile/profile.component';
+import { ToastController, ModalController } from '@ionic/angular';
 
 interface Notification {
   icon: string;
@@ -47,15 +49,16 @@ export class NotificationsPage implements OnInit {
         title: 'Happy Hour Reminder',
         message: 'Happy Hour is on! Get 1-for-1 coffee from 3 PM to 6 PM. Grab your favorite brew and unwind with us.'
       }
+      
     ]
   };
 
-
-
-  // Open Modal
-  openModal() {
-    const modal = document.getElementById('profile-modal') as HTMLIonModalElement;
-    modal.present();
+  // Open Profile modal
+  async openProfileModal() {
+    const modal = await this.modalCtrl.create({
+      component: ProfileComponent
+    });
+    return await modal.present();
   }
 
   // Close Modal
@@ -63,17 +66,25 @@ export class NotificationsPage implements OnInit {
     const modal = document.getElementById('profile-modal') as HTMLIonModalElement;
     modal.dismiss();
   }
+
+  // Navigation methods with Router
   goToHome() {
-    window.location.href = '/home';
+    this.router.navigate(['/home']);  
   }
+
   goToFavorites() {
-    window.location.href = '/favorites';
+    this.router.navigate(['/favorites']);  
   }
 
-
-
-  constructor() { }
-
-  ngOnInit() {
+  goToCart() {
+    this.router.navigate(['/cart']);  
   }
+
+  constructor(
+    private toastController: ToastController,
+    private modalCtrl: ModalController,
+    private router: Router  
+  ) {}
+
+  ngOnInit() {}
 }
